@@ -1,0 +1,12 @@
+html > body div#navsecond {
+    margin-left: 12px;
+}
+
+div#navsecond {
+    float: left;
+    margin: 0 0 0 6px;
+    padding: 0;
+    border: 0;
+    width: 180px;
+    background: transparent;
+}

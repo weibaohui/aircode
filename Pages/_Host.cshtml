@@ -1,0 +1,61 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.Web
+@namespace AirCode.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href="~/"/>
+    <link href="_content/AntDesign/css/ant-design-blazor.css" rel="stylesheet">
+    <script src="_content/AntDesign/js/ant-design-blazor.js"></script>
+    <link href="_content/AntDesign.ProLayout/css/ant-design-pro-layout-blazor.css" rel="stylesheet"/>
+
+    @* <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/> *@
+    <link href="css/site.css" rel="stylesheet"/>
+    <link href="AirCode.styles.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered"/>
+</head>
+<body>
+<component type="typeof(App)" render-mode="ServerPrerendered"/>
+
+<div id="blazor-error-ui">
+    <environment include="Staging,Production">
+        An error has occurred. This application may no longer respond until reloaded.
+    </environment>
+    <environment include="Development">
+        An unhandled exception has occurred. See browser dev tools for details.
+    </environment>
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+<script src="_framework/blazor.server.js"></script>
+
+
+<script>
+        function callChild(obj) {
+            var command = obj.innerText;
+            console.log(command)
+            var iframe = document.getElementById('child'); //先找到ifram
+            iframe.contentWindow.terminal.paste(command + "\r"); //用dom对象调用子页面的方法
+        }
+
+        function reinitIframe() {
+            var iframe = document.getElementById("child");
+            try {
+                var bHeight = iframe.contentWindow.document.body.scrollHeight;
+                var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+                var height = Math.max(bHeight, dHeight);
+                iframe.height = height;
+            } catch (ex) {
+            }
+        }
+
+        window.setInterval("reinitIframe()", 200);
+    </script>
+</body>
+</html>
