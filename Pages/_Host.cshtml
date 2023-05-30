@@ -12,7 +12,6 @@
     <link href="_content/AntDesign/css/ant-design-blazor.css" rel="stylesheet">
     <script src="_content/AntDesign/js/ant-design-blazor.js"></script>
     <link href="_content/AntDesign.ProLayout/css/ant-design-pro-layout-blazor.css" rel="stylesheet"/>
-
     @* <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/> *@
     <link href="css/site.css" rel="stylesheet"/>
     <link href="AirCode.styles.css" rel="stylesheet"/>
@@ -35,12 +34,13 @@
 
 <script src="_framework/blazor.server.js"></script>
 
-
 <script>
+
+
         function callChild(obj) {
             var command = obj.innerText;
             console.log(command)
-            var iframe = document.getElementById('child'); //先找到ifram
+            var iframe = document.getElementById('child');
             iframe.contentWindow.terminal.paste(command + "\r"); //用dom对象调用子页面的方法
         }
 

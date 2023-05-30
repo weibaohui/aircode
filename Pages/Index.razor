@@ -12,31 +12,34 @@
                   ShowIcon="false"
                   ShowLeafIcon="false"
                   DataSource="_courses"
-                  TitleExpression="x => x.DataItem.Text"
+                  OnClick="OnCourseClicked"
+                  DefaultSelectedKeys=_selectedKeys
+                  TitleExpression="x => x.DataItem.Title"
                   ChildrenExpression="x => x.DataItem.Items"
-                  IconExpression="x => x.DataItem.Icon"
                   IsLeafExpression="x => x.DataItem.Items?.Count == 0"
-                  KeyExpression="x => x.DataItem.Id" TItem="Course">
+                  KeyExpression="x => x.DataItem.Key"
+                  TItem="Course">
             </Tree>
         </Card>
     </GridCol>
     <GridCol Span="9">
-        <Card Bordered="true" Title="JavaScript 赋值" Style="margin-left: 10px">
+        <Card Bordered="true" Title="@_course.Title" Style="margin-left: 10px">
             <Button Icon="@IconType.Outline.ArrowLeft">上一节</Button>
-            <Button Icon="@IconType.Outline.ArrowRight">下一节</Button>
+            <Button Icon="@IconType.Outline.ArrowRight" OnClick="OnNextClicked">下一节</Button>
 
             <Divider Dashed/>
-
-            <a href="javascript:void(0);" onClick="callChild(this)">date</a>
-            <br>
-            <a href="javascript:void(0);" onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <a href="javascript:void(0);" onclick="callChild(this)">whoami</a>
-            <br>
+            <div id="xxx">
+                @_course.Key:
+                @((MarkupString)(Decode(_course.Text)))
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <Divider Dashed/>
 
             <Divider Dashed/>
             <Button Icon="@IconType.Outline.ArrowLeft">上一节</Button>
-            <Button Icon="@IconType.Outline.ArrowRight">下一节</Button>
+            <Button Icon="@IconType.Outline.ArrowRight" OnClick="OnNextClicked">下一节</Button>
 
         </Card>
     </GridCol>
