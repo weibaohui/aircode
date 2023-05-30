@@ -5,24 +5,15 @@ namespace AirCode.Pages;
 
 public partial class Index : ComponentBase
 {
-    public List<BasicItem> data = new List<BasicItem>
-    {
-        new BasicItem { Title = "JS简介" },
-        new BasicItem { Title = "JS使用" },
-        new BasicItem { Title = "JS赋值" },
-        new BasicItem { Title = "JS注释" },
-        new BasicItem { Title = "JS变量" },
-    };
-
-    List<GameElement> games = new()
+    List<Course> _courses = new()
     {
         new("第一章 JS", "0-0")
         {
-            Items = new List<GameElement>()
+            Items = new List<Course>()
             {
                 new("第一节 认识JS", "0-0-0")
                 {
-                    Items = new List<GameElement>()
+                    Items = new List<Course>()
                     {
                         new("JS简介", "0-0-0-0"),
                         new("JS输出", "0-0-0-1"),
@@ -31,7 +22,7 @@ public partial class Index : ComponentBase
                 },
                 new("第二节 JS语法", "0-0-1")
                 {
-                    Items = new List<GameElement>()
+                    Items = new List<Course>()
                     {
                         new("JS 数组", "0-0-1-0"),
                         new("JS 日期", "0-0-1-1"),
@@ -40,7 +31,7 @@ public partial class Index : ComponentBase
                 },
                 new("第三节 JS调试", "0-0-2")
                 {
-                    Items = new List<GameElement>()
+                    Items = new List<Course>()
                     {
                         new("JS 错误", "0-0-2-0"),
                         new("JS 性能", "0-0-2-1"),
@@ -51,7 +42,7 @@ public partial class Index : ComponentBase
         },
         new("第二章 JS对象", "0-1")
         {
-            Items = new List<GameElement>()
+            Items = new List<Course>()
             {
                 new("JS 对象定义", "0-1-0"),
                 new("JS 对象方法", "0-1-0"),
@@ -60,7 +51,7 @@ public partial class Index : ComponentBase
         },
         new("第三章 JS函数", "0-2")
         {
-            Items = new List<GameElement>()
+            Items = new List<Course>()
             {
                 new("JS 函数定义", "0-2-0"),
                 new("JS 函数参数", "0-2-1"),
@@ -68,27 +59,17 @@ public partial class Index : ComponentBase
         }
     };
 
-    Tree<GameElement> tree;
-
-    public void ItemClick(string title)
-    {
-        Console.WriteLine($"item was clicked: {title}");
-    }
-
-    public class BasicItem
-    {
-        public string Title { get; set; }
-    }
+    Tree<Course>? tree;
 }
 
-internal struct GameElement
+internal struct Course
 {
-    public List<GameElement> Items;
-    public string            Id;
-    public string            Text;
-    public string            Icon;
+    public List<Course>? Items;
+    public string?       Id;
+    public string        Text;
+    public string        Icon;
 
-    public GameElement(string text, string icon)
+    public Course(string text, string icon)
     {
         Text = text;
         Icon = icon;

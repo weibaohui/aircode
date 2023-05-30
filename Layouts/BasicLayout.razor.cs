@@ -5,19 +5,12 @@ namespace AirCode;
 
 public partial class BasicLayout : LayoutComponentBase
 {
-    public MenuDataItem[]? MenuData;
+    private MenuDataItem[]? _menuData;
 
     protected override async Task OnInitializedAsync()
     {
-        MenuData = new MenuDataItem[]
+        _menuData = new MenuDataItem[]
         {
-            new MenuDataItem
-            {
-                Path = "/counter",
-                Name = "Counter",
-                Key  = "Counter",
-                Icon = "smile",
-            },
             new MenuDataItem
             {
                 Path = "/",

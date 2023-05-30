@@ -11,12 +11,12 @@
             <Tree ShowLine="true" @ref="tree" DefaultExpandAll
                   ShowIcon="false"
                   ShowLeafIcon="false"
-                  DataSource="games"
+                  DataSource="_courses"
                   TitleExpression="x => x.DataItem.Text"
                   ChildrenExpression="x => x.DataItem.Items"
                   IconExpression="x => x.DataItem.Icon"
                   IsLeafExpression="x => x.DataItem.Items?.Count == 0"
-                  KeyExpression="x => x.DataItem.Id" TItem="GameElement">
+                  KeyExpression="x => x.DataItem.Id" TItem="Course">
             </Tree>
         </Card>
     </GridCol>
