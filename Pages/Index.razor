@@ -26,11 +26,10 @@
         <Card Bordered="true" Title="@_course.Title" Style="margin-left: 10px">
             <Button Icon="@IconType.Outline.ArrowLeft">上一节</Button>
             <Button Icon="@IconType.Outline.ArrowRight" OnClick="OnNextClicked">下一节</Button>
-
             <Divider Dashed/>
             <div id="xxx">
                 @_course.Key:
-                @((MarkupString)(Decode(_course.Text)))
+                @((MarkupString)_course.Text)
             </div>
             <br/>
             <br/>
