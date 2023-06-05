@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: course
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: course
+          image: weibh/course:latest
+          ports:
+            - containerPort: 80
+        - name: my-sidecar
+          image: weibh/cloudshell
+          ports:
+            - containerPort: 8376
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: my-app
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
