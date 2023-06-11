@@ -1,150 +1,76 @@
 - Items:
     - Items:
-        - Items:
-          Title: JS简介
-          Text: >-
-            <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>
-          Key: 0
-        - Items:
-          Title: JS输出
-          Text: >-
-            <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>    <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>
-          Key: 1
-        - Items:
-          Title: JS语句
-          Text: >-
-            <br>
-            <a href="javascript:void(0)" onclick="callChild(this)">date</a>
-            <br>
-            <br><a href="javascript:void(0)"  onclick="callChild(this)">kubectl get pods </a>
-            <br>
-            <br><br>
-            <br>
-          Key: 2
-      Title: 第一节 认识JS
-      Text:
-      Key: 98
+      Title: 1.显示普通字符串
+      Text: >-
+        <a href="javascript:void(0)" onclick="callChild(this)"> echo "It is a test"</a><br>
+        这里的双引号完全可以省略，以下命令与上面实例效果一致：
+        <br>
+        echo It is a test
+        <br>
+        <br>
+      Key: 71
     - Items:
-        - Items:
-          Title: JS 数组
-          Text:
-          Key: 3
-        - Items:
-          Title: JS 日期
-          Text:
-          Key: 4
-        - Items:
-          Title: JS 随机
-          Text:
-          Key: 5
-      Title: 第二节 JS语法
-      Text:
-      Key: 99
+      Title: 2.显示转义字符
+      Text: >-
+        <a href="javascript:void(0)" onclick="callChild(this)">echo "\"It is a test\""</a><br>
+        结果将是:<br>
+        "It is a test"
+        同样，双引号也可以省略
+        <br><br>
+      Key: 72
     - Items:
-        - Items:
-          Title: JS 错误
-          Text:
-          Key: 7
-        - Items:
-          Title: JS 性能
-          Text:
-          Key: 8
-        - Items:
-          Title: JS 保留词
-          Text:
-          Key: 9
-      Title: 第三节 JS调试
-      Text:
-      Key: 6
-  Title: 第一章 JS
-  Text:
-  Key: 97
+      Title: 3.显示变量
+      Text: >-
+        read 命令从标准输入中读取一行,并把输入行的每个字段的值指定给 shell 变量<br>
+        <a href="javascript:void(0)" onclick="callChild(this)">#!/bin/sh</a><br>
+        <a href="javascript:void(0)" onclick="callChild(this)">read name</a><br>
+        <a href="javascript:void(0)" onclick="callChild(this)"> echo "$name It is a test"</a><br>
+        以上代码保存为 test.sh，name 接收标准输入的变量，结果将是:
+        <br>
+        <br>
+      Key: 73
+    - Items:
+      Title: 4.显示换行
+      Text: >-
+        <a href="javascript:void(0)" onclick="callChild(this)">echo -e "OK!\n"</a># -e 开启转义<br>
+        <a href="javascript:void(0)" onclick="callChild(this)"> echo "It it a test"</a><br>
+        输出结果：<br>
+        OK!<br>
+        <br>
+        It it a test<br>
+        <br><br>
+      Key: 74
+    - Items:
+      Title: 5.显示不换行
+      Text: >-
+        <a href="javascript:void(0)" onclick="callChild(this)">echo -e "OK! \c"</a><br> # -e 开启转义 \c 不换行 <br>
+        <a href="javascript:void(0)" onclick="callChild(this)"> echo "It it a test"</a><br>
+        输出结果： <br>
+        OK! It is a test <br>
+        <br>
+      Key: 75
+    - Items:
+      Title: 6.显示命令执行结果
+      Text: >-
+        <a href="javascript:void(0)" onclick="callChild(this)"> echo `date`</a><br>
+        注意：这里使用的是反引号`，而不是单引号'。<br>
+        <br>
+        结果将显示当前日期<br>
+        Sat Dec 9 14:41:48 CST 2017<br>
+      Key: 76
+  Title: shell 命令
+  Text: >-
+    Shell 的 echo 指令与 PHP 的 echo 指令类似，都是用于字符串的输出。命令格式：
+    <br>
+    <a href="javascript:void(0)" onclick="callChild(this)">echo string</a><br>
+    您可以使用echo实现更复杂的输出格式控制。
+    <br>
+  Key: 7
 - Items:
-    - Items:
-      Title: JS 对象定义
-      Text:
-      Key: 11
-    - Items:
-      Title: JS 对象方法
-      Text:
-      Key: 12
-    - Items:
-      Title: JS 对象属性
-      Text:
-      Key: 13
-  Id:
-  Title: 第二章 JS对象
+  Title: shell test 命令
   Text:
-  Key: 10
+  Key: 8
 - Items:
-    - Items:
-      Title: JS 函数定义
-      Text:
-      Key: 15
-    - Items:
-      Title: JS 函数参数
-      Text:
-      Key: 16
-  Title: 第三章 JS函数
+  Title: shell 函数
   Text:
-  Key: 14
+  Key: 9
